@@ -102,6 +102,7 @@ a {
 .button:active {
   transform: translateY(1px);
 }
+
 .row {
   display: flex;
   justify-content: space-around;
@@ -129,4 +130,13 @@ a {
   text-align: center;
   font-size: 30px;
   font-weight: 200;
+}
+.reset {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-left: 45%;
+}
+.reset:hover {
+  cursor: pointer;
 }

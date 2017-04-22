@@ -39,7 +39,7 @@ var PropTypes = require('prop-types');
    }
    render() {
      return (
-       <p style={styles.content}>
+       <p style={styles.content} className='load'>
          {this.state.text}
        </p>
      )
@@ -47,13 +47,13 @@ var PropTypes = require('prop-types');
  }
 
  Loading.propTypes = {
-   text: PropTypes.string,
-   speed: PropTypes.number
+   text: PropTypes.string.isRequired,
+   speed: PropTypes.number.isRequired,
  };
 
  Loading.defaultProps = {
    text: 'Loading',
-   speed: 300
+   speed: 350
  };
 
  module.exports = Loading;

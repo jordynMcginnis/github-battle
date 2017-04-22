@@ -4,7 +4,7 @@ var React = require('react');
  function PlayerPreview (props) {
    return (
      <div>
-       <div className='column'>
+       <div className='c'>
          <img
            className='avatar'
            src={props.avatar}

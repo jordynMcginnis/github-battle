@@ -4,12 +4,13 @@ var Link = require('react-router-dom').Link;
 var api = require('../utils/api');
 var PlayerPreview = require('./PlayerPreview');
 var PropTypes = require('prop-types');
-
+var Loading = require('./Loading');
 
 function Profile (props){
   var info = props.info;
   return (
     <PlayerPreview avatar={info.avatar_url} username={info.login}>
+
       <ul className='space-list-items'>
         {info.name && <li>{info.name}</li>}
         {info.location && <li>{info.location}</li>}
@@ -28,10 +29,10 @@ Profile.propTypes = {
 
 function Player (props) {
   return (
-    <div>
+    <div className = 'resultspage'>
       <h1 className ='header'>{props.label}</h1>
       <h3 style={{textalign: 'center'}}>Score: {props.score}</h3>
-      <Profile info={props.profile}/>
+      <div className='pinfo'> <Profile info={props.profile}/> </div>
     </div>
   )
 }
@@ -82,7 +83,7 @@ class Results extends React.Component {
     var loading = this.state.loading;
 
     if(this.state.loading === true) {
-      return <p>Loading</p>
+      return <Loading />
     }
     if(error) {
       return (
@@ -94,8 +95,9 @@ class Results extends React.Component {
     }
 
     return (
-      <div>
+      <div className ='results'>
         <Player
+          className ='winner'
           label='winner'
           score={winner.score}
           profile={winner.profile}
